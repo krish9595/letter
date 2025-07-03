@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Letter 💌</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffeaea;
+      font-family: 'Comic Sans MS', cursive;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .letter {
+      max-width: 650px;
+      margin: 80px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 30px 35px;
+      border-radius: 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 22px;
+      animation: fall linear infinite;
+      opacity: 0.3;
+      z-index: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(120vh);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ❤️ Falling Heart Emoji Script -->
+  <script>
+    for (let i = 0; i < 40; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      heart.style.fontSize = Math.random() * 10 + 18 + "px";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- 💌 Love Letter -->
+  <div class="letter">
+    Pata nahi kaise shuru karun, lekin ek baat toh pakki hai…<br><br>
+    Jab se tu mili hai, meri duniya thodi interesting ho gayi hai 🎬💖<br>
+    Tere cute smile se lekar tere nakhre tak, sab kuch direct heart mein hit karta hai.<br>
+    Tu woh notification hai jiska main intezaar karta hoon har roz…<br>
+    Aur tu woh coffee hai, jo bina piye bhi mujhe energetic bana deti hai ☕😄<br><br>
+
+    Ek baat bolun?<br>
+    Agar flirt karna crime hota, toh main tere liye happily jail chala jaata — sirf isliye ki har din tujhse flirt kar saku 😜❤️<br>
+    Tu itni pyaari hai ki agar tujhe chocolate bolun, toh Cadbury bhi jealous ho jaaye.<br>
+    Aur agar tu gulab ho, toh saari garden ke flowers line mein khade ho jaayein tere autograph ke liye 🌹✨<br><br>
+
+    Mujhe nahi pata tu mere baare mein kya sochti hai, par main toh bas yahi chahta hoon…<br>
+    Tu hamesha muskurati rahe, thodi si meri bhi ban jaaye (thodi zyada chalega 😜),<br>
+    aur yeh dosti kabhi khatam na ho.<br><br>
+
+    Baaki zyada likh diya toh tu keh degi, “Arey, stop flirting yaar!”<br>
+    Par kya karun, flirt karna bhi ek art hai… aur tu meri jaan hai 🎨💘<br><br>
+
+    Tera hi,<br>
+    Thoda cheesy, thoda crazy friend 😁<br>
+    Krish
+  </div>
+</body>
+</html>
