@@ -3,24 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Surprise for Jaiwanti</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <title>Jaiwanti 💕</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Baloo 2', cursive;
+    }
+
+    body {
+      background-color: #ffe6e6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      width: 250px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ff3399;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .btn-container {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      color: #ff3399;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      position: absolute;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 8px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="tenor-gif-embed" data-postid="22885016" data-share-method="host" data-aspect-ratio="1.04918" data-width="100%">
-      <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a> from
-      <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
-    </div>
-    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-    <h1>Do you wanna go on a date with me? 🥺</h1>
+  <img src="https://media.tenor.com/OyHJWr7c0c8AAAAi/kawaii.gif" alt="Cute Kitty" />
+  <h1>Do you wanna go on a date with me? 🥺</h1>
+  <p>Chiku is all yours</p>
 
-    <div class="btn">
-      <a href="yes.html">Yes</a>
-      <a href="#" id="move-random">No</a>
-    </div>
+  <div class="btn-container">
+    <button onclick="location.href='yes.html'">Yes</button>
+    <button id="noBtn">No</button>
   </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    window.addEventListener("resize", () => {
+      noBtn.style.left = `50%`;
+      noBtn.style.top = `0%`;
+    });
+  </script>
 </body>
 </html>
