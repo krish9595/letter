@@ -3,24 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yayyy 💘</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <title>Yay!</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    html, body, * {
+      font-family: 'Baloo 2', cursive !important;
+      font-weight: 600 !important;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffd6d6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    img {
+      width: 250px;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #ff3399;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
+    .btn-container {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      color: #ff3399;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      position: absolute;
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 20px; }
+      p { font-size: 16px; }
+      button { font-size: 14px; padding: 8px 20px; }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host" data-aspect-ratio="1.37853" data-width="100%">
-      <a href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433">Mochi Cat GIF</a> from
-      <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
-    </div>
-    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-    <h1>Mujhe pata tha tum maan jaogi... 💕</h1>
-    <p>Apka surprise ready hai, kya aap dekhna chahoge?</p>
-    <div class="btn">
-      <a href="surprise.html">Yes</a>
-      <a href="#" id="move-random">No</a>
-    </div>
+  <img src="https://media.tenor.com/WgY_FpKxy10AAAAM/love-kiss.gif" alt="Cute Cats GIF" />
+  <h2>Mujhe pata tha tum maan jaogi... 💕</h2>
+  <p>Apka surprise ready hai, kya aap dekhna chahoge?</p>
+
+  <div class="btn-container">
+    <button onclick="location.href='surprise.html'">Yes</button>
+    <button id="noBtn">No</button>
   </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    function moveButtonRandomly() {
+      const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+      const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+
+    noBtn.addEventListener("mouseenter", moveButtonRandomly); // desktop
+    noBtn.addEventListener("touchstart", e => { e.preventDefault(); moveButtonRandomly(); }); // mobile
+  </script>
 </body>
 </html>
