@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yay!</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -23,49 +25,44 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
     }
 
     img {
-      width: 250px;
-      max-width: 100%;
+      width: 220px;
       margin-bottom: 20px;
     }
 
     h2 {
       font-size: 24px;
       color: #ff3399;
-      font-weight: 800;
       margin-bottom: 10px;
     }
 
     p {
       font-size: 18px;
-      font-weight: 600;
-      color: #222;
       margin-bottom: 30px;
     }
 
-    .btn-container {
+    .btns {
       position: relative;
       display: flex;
       gap: 20px;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     button {
       padding: 10px 25px;
-      border: none;
-      border-radius: 20px;
       font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
+      font-weight: 800;
       background: white;
       color: #ff3399;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: 0.3s ease;
     }
 
     button:hover {
@@ -75,21 +72,15 @@
     #noBtn {
       position: absolute;
     }
-
-    @media (max-width: 600px) {
-      h2 { font-size: 20px; }
-      p { font-size: 16px; }
-      button { font-size: 14px; padding: 8px 20px; }
-    }
   </style>
 </head>
 <body>
 
-  <img src="https://media.tenor.com/WgY_FpKxy10AAAAM/love-kiss.gif" alt="Cute Cats GIF" />
+  <img src="https://media.tenor.com/WgY_FpKxy10AAAAM/love-kiss.gif" />
   <h2>Mujhe pata tha tum maan jaogi... 💕</h2>
   <p>Apka surprise ready hai, kya aap dekhna chahoge?</p>
 
-  <div class="btn-container">
+  <div class="btns">
     <button onclick="location.href='surprise.html'">Yes</button>
     <button id="noBtn">No</button>
   </div>
@@ -97,17 +88,18 @@
   <script>
     const noBtn = document.getElementById("noBtn");
 
-    function moveButtonRandomly() {
-      const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-      const maxY = window.innerHeight - noBtn.offsetHeight - 20;
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
+    function moveNoButton() {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 20);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 20);
       noBtn.style.left = `${x}px`;
       noBtn.style.top = `${y}px`;
     }
 
-    noBtn.addEventListener("mouseenter", moveButtonRandomly); // desktop
-    noBtn.addEventListener("touchstart", e => { e.preventDefault(); moveButtonRandomly(); }); // mobile
+    noBtn.addEventListener("mouseenter", moveNoButton);
+    noBtn.addEventListener("touchstart", function (e) {
+      e.preventDefault();
+      moveNoButton();
+    });
   </script>
 </body>
 </html>
