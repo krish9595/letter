@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Letter for You</title>
+  <title>Surprise</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -18,7 +20,7 @@
 
     body {
       background: #ffe6e6;
-      padding: 20px;
+      padding: 30px;
       overflow: hidden;
       position: relative;
     }
@@ -26,7 +28,7 @@
     .container {
       max-width: 700px;
       margin: auto;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 20px;
       padding: 30px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -35,9 +37,9 @@
     }
 
     .letter-text {
-      white-space: pre-line;
       font-size: 18px;
       color: #333;
+      white-space: pre-line;
     }
 
     .heart {
@@ -45,26 +47,15 @@
       width: 20px;
       height: 20px;
       background: red;
-      top: -10px;
       border-radius: 50%;
+      opacity: 0.3;
+      top: -10px;
       animation: fall 5s linear infinite;
-      opacity: 0.4;
-      z-index: 1;
     }
 
     @keyframes fall {
-      0% { top: -10px; transform: translateX(0); }
-      100% { top: 110vh; transform: translateX(30px); }
-    }
-
-    @media (max-width: 600px) {
-      .letter-text {
-        font-size: 16px;
-      }
-
-      .container {
-        padding: 20px;
-      }
+      0% { transform: translateY(-10px); }
+      100% { transform: translateY(110vh); }
     }
   </style>
 </head>
