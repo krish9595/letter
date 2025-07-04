@@ -28,6 +28,8 @@
       text-align: center;
       height: 100vh;
       padding: 20px;
+      overflow: hidden;
+      position: relative;
     }
 
     img {
@@ -98,6 +100,8 @@
       noBtn.style.top = `${y}px`;
     }
 
+    // Move once on load
+    window.addEventListener("load", moveNoButton);
     noBtn.addEventListener("mouseenter", moveNoButton);
     noBtn.addEventListener("touchstart", function (e) {
       e.preventDefault();
