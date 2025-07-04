@@ -3,109 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jaiwanti 💖</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-
-  <style>
-    html, body, * {
-      font-family: 'Baloo 2', cursive !important;
-      font-weight: 600 !important;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #ffe6e6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      height: 100vh;
-      padding: 20px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    img {
-      width: 220px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      color: #ff3399;
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .btns {
-      position: relative;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    button {
-      padding: 10px 25px;
-      font-size: 16px;
-      background-color: white;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      color: #ff3399;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      font-weight: 800;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.1);
-    }
-
-    #noBtn {
-      position: absolute;
-      left: -9999px;
-    }
-  </style>
+  <title>Surprise for Jaiwanti</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="container">
+    <div class="tenor-gif-embed" data-postid="22885016" data-share-method="host" data-aspect-ratio="1.04918" data-width="100%">
+      <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a> from
+      <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-  <img src="https://media.tenor.com/VW7K7jzGm24AAAAi/cute-kitty.gif" alt="kitty" />
-  <h1>Do you wanna go on a date with me? 🥺</h1>
-  <p>Chiku is all yours</p>
+    <h1>Do you wanna go on a date with me? 🥺</h1>
 
-  <div class="btns">
-    <button onclick="location.href='yes.html'">Yes</button>
-    <button id="noBtn">No</button>
+    <div class="btn">
+      <a href="yes.html">Yes</a>
+      <a href="#" id="move-random">No</a>
+    </div>
   </div>
-
-  <script>
-    const noBtn = document.getElementById("noBtn");
-
-    function moveNoButton() {
-      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 20);
-      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 20);
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
-    }
-
-    window.addEventListener("load", moveNoButton);
-    noBtn.addEventListener("mouseenter", moveNoButton);
-    noBtn.addEventListener("touchstart", function (e) {
-      e.preventDefault();
-      moveNoButton();
-    });
-  </script>
 </body>
 </html>
